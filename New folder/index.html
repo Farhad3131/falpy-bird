@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flappy Bird</title>
+<style>
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(#152b45,#071321);color:#fff;font:16px system-ui;display:grid;place-items:center}
+main{width:min(94vw,520px);text-align:center;padding:20px}h1{margin:0 0 8px;font-size:28px}
+p{color:#c7d7e8;margin:8px 0 16px}canvas{width:min(100%,480px);height:auto;aspect-ratio:3/4;border:3px solid #d5e6f6;border-radius:12px;box-shadow:0 12px 40px #0008;background:#6ec3f5;touch-action: manipulation}
+#status{min-height:24px;color:#d9e9f8;font-size:14px}
+</style>
+</head>
+<body><main>
+<h1>Flappy Bird</h1><p>Press SPACE, ↑ or tap to fly. Avoid the pipes!</p>
+<canvas id="canvas" oncontextmenu="event.preventDefault()"></canvas>
+<div id="status">Loading game…</div>
+</main>
+<script>
+var Module={
+ canvas:(function(){return document.getElementById('canvas')})(),
+ print:function(t){console.log(t)},
+ printErr:function(t){console.error(t)},
+ setStatus:function(t){document.getElementById('status').textContent=t||'Ready — tap or press SPACE to play.'},
+ onRuntimeInitialized:function(){document.getElementById('status').textContent='Ready — tap or press SPACE to play.'}
+};
+</script>
+{{{ SCRIPT }}}
+</body></html>
